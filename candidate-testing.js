@@ -24,18 +24,14 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let res;
+  let grade;
   if (candidateAnswer === correctAnswer) {
-    res = "correct.";
+    grade = "correct.";
   } else {
-    res = "incorrect.";
+    grade = "incorrect.";
   }
 
-  console.log("Your answer of " + candidateAnswer + " is " + res);
-
-  let grade;
-  
-
+  console.log("Your answer of " + candidateAnswer + " is " + grade);
   return grade;
 }
 
