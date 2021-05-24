@@ -20,7 +20,10 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   candidateAnswer = input.question(question + " ");
+}
 
+function gradeQuiz(candidateAnswers) {
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let res;
   if (candidateAnswer === correctAnswer) {
     res = "correct.";
@@ -29,12 +32,6 @@ function askQuestion() {
   }
 
   console.log("Your answer of " + candidateAnswer + " is " + res);
-}
-
-function gradeQuiz(candidateAnswers) {
-
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
 
   let grade;
   
