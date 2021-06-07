@@ -31,8 +31,20 @@ function askQuestion() {
 }
 
 function gradeQuiz(candidateAnswers) {
+  let correct = 0;
   for(let i = 0; i < candidateAnswers.length; i++) {
-    console.log(`Question: ${questions[i]}, Your answer: ${candidateAnswers[i]}, Correct answer: ${correctAnswers[i]}`)
+    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+      correct++;
+    }
+  }
+
+  let grade = (correct / questions.length) * 100;
+  console.log(`>>> Overall Grade: ${grade}% (${correct} of ${questions.length} responses correct)`);
+
+  if (grade >= 80) {
+    console.log(">>> Status: PASSED <<<")
+  } else {
+    console.log(">>> Status: FAILED <<<")
   }
 }
 
@@ -40,6 +52,7 @@ function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
   console.log("Welcome, " + candidateName + ".");
+  console.log("");
   
   askQuestion();
   gradeQuiz(this.candidateAnswers);
