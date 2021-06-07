@@ -1,9 +1,9 @@
 const input = require('readline-sync');
 
 let candidateName;
-let question = "";
-let correctAnswer = "";
-let candidateAnswer = "";
+let question;
+let correctAnswer;
+let candidateAnswer;
 let questions = [
   "Who was the first American woman in space?",
   "True or false: 5 kilometer == 5000 meters?",
@@ -26,7 +26,9 @@ function askForName() {
 
 function askQuestion() {
   for(let i = 0; i < questions.length; i++) {
-    candidateAnswers[i] = input.question(questions[i] + " ");
+    candidateAnswers[i] = input.question(`${i+1}) ${questions[i]} `);
+    console.log("Your Answer: " + candidateAnswers[i]);
+    console.log("Correct Answer: " + correctAnswers[i]);
   }
 }
 
@@ -46,7 +48,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     console.log(">>> Status: FAILED <<<")
   }
-  
+
   return grade;
 }
 
